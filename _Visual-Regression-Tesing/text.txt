@@ -24,3 +24,11 @@ package.json:
 	testTimeout: 30000,
 	bail: 0,
 }
+
+#percy:
+$ npm install --save-dev @percy/cli @percy/puppeteer
+
+    "test:percy": "percy exec -- jest -i ./tests-snapshots/__tests__/percy.test.js"
+
+do not destructure:
+const percySnapshot = require('@percy/puppeteer')
