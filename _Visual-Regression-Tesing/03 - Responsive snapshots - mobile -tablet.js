@@ -8,7 +8,7 @@ describe('Visual Regression testing', () => {
 	let page
 
 	beforeAll(async function () {
-		browser = await puppeteer.launch({ headless: false })
+		browser = await puppeteer.launch({ headless: true })
 		page = await browser.newPage()
 	})
 
@@ -57,14 +57,5 @@ describe('Visual Regression testing', () => {
 			failureThresholdType: 'percent',
 			failureThreshold: 0.01,
 		})
-	})
-
-	// Exclude dynamic content from snapshot
-	test.only('Remove element before snapshot', async function () {
-		await page.goto('https://www.example.com')
-		await page.evaluate(() => {
-			;(document.querySelectorAll('h1') || []).forEach((el) => el.remove())
-		})
-		await page.waitForTimeout(5000)
 	})
 })

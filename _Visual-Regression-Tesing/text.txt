@@ -16,9 +16,9 @@ package.json:
     "test-snapshot-update": "jest --config=jest.config.js --updateSnapshot --detectOpenHandles --forceExit"
   },
 
-2mkdir:./tests-snapshots/__tests__/
+2xmkdir:./tests-snapshots/__tests__/
 
-  jest.config.js:
+  create jest.config.js:
   module.exports = {
 	rootDir: './test-snapshots',
 	testTimeout: 30000,
