@@ -1,0 +1,26 @@
+$npm init
+$npm install puppeteer jest jest-image-snapshot
+$ npm install prettier
+.prettierrc:
+{
+  "semi": false,
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "useTabs": true,
+  "tabWidth": 2,
+  "trailingComma": "es5"
+}
+package.json:
+  "scripts": {
+    "test-snapshots": "jest --config=jest.config.js --detectOpenHandles --forceExit",
+    "test-snapshot-update": "jest --config=jest.config.js --updateSnapshot --detectOpenHandles --forceExit"
+  },
+
+2mkdir:./tests-snapshots/__tests__/
+
+  jest.config.js:
+  module.exports = {
+	rootDir: './test-snapshots',
+	testTimeout: 30000,
+	bail: 0,
+}
